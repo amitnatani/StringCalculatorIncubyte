@@ -5,6 +5,8 @@
 * Support of custom delimiter
 * Support of new lines in the given string
 * Raising exceptions for negative numbers
+* Ignore numbers greater than 1000
+* Can have delimiter containing more than 1 character
 
 ## How to run
 * Clone the repository
