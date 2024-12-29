@@ -4,7 +4,13 @@ class Calculator
 
     sum = 0
     numbers.split(",").each do |number|
-      sum += number.to_i
+      if number.include?("\n")
+        number.split("\n").each do |num|
+          sum += num.to_i
+        end
+      else
+        sum += number.to_i
+      end
     end
     sum
   end
