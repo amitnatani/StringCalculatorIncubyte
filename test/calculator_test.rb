@@ -26,4 +26,8 @@ class CalculatorTest < Test::Unit::TestCase
     assert_equal 6, @calculator.add("//:1:2:3")
     assert_equal 20, @calculator.add("//;1\n10;2;7")
   end
+
+  def test_add_with_negative_numbers
+    assert_raise(ArgumentError.new("negative numbers not allowed -3,-4")) { @calculator.add("1,2,-3,-4") }
+  end
 end
