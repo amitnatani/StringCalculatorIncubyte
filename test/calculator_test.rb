@@ -30,4 +30,8 @@ class CalculatorTest < Test::Unit::TestCase
   def test_add_with_negative_numbers
     assert_raise(ArgumentError.new("negative numbers not allowed -3,-4")) { @calculator.add("1,2,-3,-4") }
   end
+  
+  def test_add_with_number_greater_than_1000
+    assert_equal 7, @calculator.add('1,2,1001,4')
+  end
 end
