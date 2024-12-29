@@ -26,7 +26,11 @@ class Calculator
 
   def find_delimiter(numbers)
     delimiter = ','
-    if numbers.start_with?("//")
+    if numbers.start_with?("//[")
+      delimiter_end_index = numbers.index(']')
+      delimiter = numbers[3...delimiter_end_index]
+      numbers = numbers[delimiter_end_index..]
+    elsif numbers.start_with?("//")
       delimiter = numbers[2]
       numbers = numbers[3..]
     end
