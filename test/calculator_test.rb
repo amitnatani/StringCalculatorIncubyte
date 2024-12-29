@@ -21,4 +21,9 @@ class CalculatorTest < Test::Unit::TestCase
     assert_equal 10, @calculator.add("1,2\n\n4,3")
     assert_equal 10, @calculator.add("\n1,2\n\n4,3\n")
   end
+
+  def test_add_with_custom_delimeter
+    assert_equal 6, @calculator.add("//:1:2:3")
+    assert_equal 20, @calculator.add("//;1\n10;2;7")
+  end
 end
