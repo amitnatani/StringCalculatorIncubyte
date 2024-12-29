@@ -8,10 +8,12 @@ class Calculator
     numbers.split(delimiter).each do |number|
       if number.include?("\n")
         number.split("\n").each do |num|
+          next if num.to_i > 1000
           check_negative_number(number, negatives)
           sum += num.to_i
         end
       else
+        next if number.to_i > 1000
         check_negative_number(number, negatives)
         sum += number.to_i
       end
