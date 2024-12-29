@@ -34,4 +34,8 @@ class CalculatorTest < Test::Unit::TestCase
   def test_add_with_number_greater_than_1000
     assert_equal 7, @calculator.add('1,2,1001,4')
   end
+
+  def test_add_with_multiple_character_delimiter
+    assert_equal 6, @calculator.add("//[***]\n1***2***3")
+  end
 end
